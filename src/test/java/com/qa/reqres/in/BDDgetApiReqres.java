@@ -21,7 +21,9 @@ public class BDDgetApiReqres {
         RestAssured.baseURI = "https://reqres.in";
         given().log().all().contentType("application/json")
                 .when().get("/api/users/2")
-                .then().statusCode(200);
+                .then().statusCode(200)
+                .statusLine("HTTP/1.1 200 OK");
+
     }
 
     @Test(priority = 3)
@@ -29,7 +31,10 @@ public class BDDgetApiReqres {
         RestAssured.baseURI = "https://reqres.in";
         given().log().all().contentType("application/json")
                 .when().get("/api/users/23")
-                .then().statusCode(404);
+                .then().statusCode(404)
+                .statusLine("HTTP/1.1 404 Not Found");
+
+
 
     }
 
@@ -38,7 +43,9 @@ public class BDDgetApiReqres {
         RestAssured.baseURI = "https://reqres.in";
         given().log().all().contentType("application/json")
                 .when().get("/api/unknown")
-                .then().statusCode(200);
+                .then().statusCode(200)
+                .statusLine("HTTP/1.1 200 OK");
+
     }
 
     @Test(priority = 5)
@@ -46,14 +53,18 @@ public class BDDgetApiReqres {
         RestAssured.baseURI = "https://reqres.in";
         given().log().all().contentType("application/json")
                 .when().get("/api/unknown/2")
-                .then().statusCode(200);
+                .then().statusCode(200)
+                .statusLine("HTTP/1.1 200 OK");
+
     }
     @Test(priority = 6)
     public void getResourcesNotFound() {
        RestAssured.baseURI = "https://reqres.in";
        given().log().all().contentType("application/json")
                .when().get("/api/unknown/23")
-               .then().statusCode(404);
+               .then().statusCode(404)
+               .statusLine("HTTP/1.1 404 Not Found");
+
     }
 
 }
