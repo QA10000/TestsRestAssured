@@ -16,7 +16,7 @@ public class BDDgetApiReqres {
                 .header("Content-Encoding", "gzip");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void getSingleUser() {
         RestAssured.baseURI = "https://reqres.in";
         given().log().all().contentType("application/json")

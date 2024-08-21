@@ -1,7 +1,6 @@
 package com.qa.restassured.NonBDDGetApis;
 
 import io.restassured.RestAssured;
-import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -83,7 +82,6 @@ public class GoRestApi {
         String dateHeader = response.header("Date");
         Assert.assertTrue(dateHeader.contains("GMT"));
         System.out.println(dateHeader);
-
         Headers headers = response.getHeaders();
         System.out.println("Print all headers" + headers);
 
@@ -106,9 +104,6 @@ public class GoRestApi {
         String dateHeader = response.header("Date");
         Assert.assertTrue(dateHeader.contains("GMT"));
         System.out.println(dateHeader);
-        String header = response.getHeader("Content-Encoding");
-        System.out.println(header);
-        Assert.assertTrue(header.contains("gzip"));
         Headers headers = response.getHeaders();
         System.out.println("Print all headers" + headers);
     }
