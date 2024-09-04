@@ -3,7 +3,6 @@ package postapis;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
-import com.github.javafaker.service.FakerIDN;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -24,7 +23,7 @@ public class CreateFakerUser {
         ObjectMapper mapper = new ObjectMapper();
         String payload = mapper.writeValueAsString(reqresdata);
         request.body(payload);
-        Response response = request.post("/api/users/2");
+        Response response = request.post("/api/users");
         response.prettyPrint();
     }
 }

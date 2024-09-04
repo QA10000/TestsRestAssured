@@ -1,8 +1,9 @@
 package postapis;
-import org.testng.annotations.Test;
+
 import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
 
 public class PuttingInfoUsingJsongObj {
@@ -11,7 +12,7 @@ public class PuttingInfoUsingJsongObj {
     JsonObject obj  = new JsonObject();
     obj.addProperty("name", "John");
     obj.addProperty("job", "Teacher");
-    obj.addProperty("id", "562");
+    obj.addProperty("id", "575");
     String jsonString = obj.toString();
 
         Response response = given().log().all()
